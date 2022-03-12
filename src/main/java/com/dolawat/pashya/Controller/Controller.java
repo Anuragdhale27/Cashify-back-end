@@ -12,6 +12,7 @@ import com.dolawat.pashya.Entity.UserEntity;
 import com.dolawat.pashya.service.ServiceInterface;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class Controller {
 	
 	@Autowired
@@ -21,8 +22,7 @@ public class Controller {
 	public String getPage() {
 		return "Welcome";
 	}
-
-	@CrossOrigin(origins = "http://localhost:4200")
+	
 	@GetMapping("/courses")
 	public List<UserEntity> getData(){
 		return this.service.getCourse();
